@@ -1,36 +1,60 @@
-$table: #c19a6b; //as in to set things on...
+$table: #c19a6b;
 $rand: (random(4)-4);
 *,
 *::before,
 *::after {
-    box-sizing: border-box;
+  box-sizing: border-box;
 }
+
 body {
-  background: linear-gradient( 333deg, #92c9f1, #d9b7ab, #fff6e6);
+  background: linear-gradient(-45deg, #ee7752, #e73c7e, #23a6d5, #23d5ab);
+  background-size: 400% 400%;
+  animation: gradient 15s ease infinite;
+  // height: 100vh;
 }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
 .container {
-    max-width: 1320px;
-    margin: 0 auto;
-    padding-left: 12px;
-    padding-right: 12px;
+  max-width: 1320px;
+  margin: 0 auto;
+  padding-left: 12px;
+  padding-right: 12px;
+  margin-bottom: 80px;
+  @include PAD {
+    max-width: 720px;
+  }
 
-    @include PAD {
-        max-width: 720px;
-    }
-
-    @include MB {
-        max-width: 372px;
-    }
+  @include MB {
+    max-width: 372px;
+  }
 }
 h1 {
   margin: 0 auto;
   margin-top: 20px;
+  margin-bottom: 20px;
   text-align: center;
+  font-size: 48px;
   width: 100%;
   font-family: "Raleway", sans-serif;
+  color: white;
 }
 h3 {
   font-family: "Permanent Marker", cursive;
+  text-align: center;
+  font-size: 24px;
+  transform: rotate($rand + deg);
+  opacity: random(100);
 }
 
 .table {
@@ -42,17 +66,12 @@ h3 {
 }
 
 ul {
-    display: flex;
-    gap: 24px;
-    justify-content: space-between;
-    flex-wrap: wrap;
+  display: flex;
+  gap: 24px;
+  justify-content: space-between;
+  flex-wrap: wrap;
 }
-li.poloroid {
-    display: flex;
-    width: calc((100% - 48px) / 3);
-    flex-direction: column;
-    padding: 25px 30px;
-}
+
 li.poloroid:nth-child(odd) {
   transform: rotate(random(2) + deg);
 }
@@ -60,25 +79,18 @@ li.poloroid:nth-child(even) {
   transform: rotate(random(2) - 3 + deg);
 }
 .poloroid {
-  width: 3.5in;
-  height: 4.25in;
+  display: flex;
+  width: calc((100% - 48px) / 3);
+  flex-direction: column;
+  padding: 25px 30px;
   background: white;
   border-radius: 2%;
+  @include PAD {
+    width: 100%;
+    margin-bottom: 40px;
+  }
 }
 
-.poloroid h3 {
-  position: relative;
-  display: block;
-  z-index: 100;
-  bottom: 0;
-  top: 3.5in;
-  width: 80%;
-  margin: 0 auto;
-  text-align: center;
-  font-size: 24px;
-  transform: rotate($rand + deg);
-  opacity: random(100);
-}
 li.poloroid:hover > .photo img,
 li.poloroid:target > .photo img,
 li.poloroid:active > .photo img {
@@ -89,6 +101,7 @@ li.poloroid:active > .photo img {
   background: black;
   z-index: 10;
   border: 1px solid black;
+  margin-bottom: 16px;
 }
 
 .photo img {
