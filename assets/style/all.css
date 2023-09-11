@@ -60,22 +60,6 @@ body {
   -webkit-animation: gradient 15s ease infinite;
           animation: gradient 15s ease infinite; }
 
-@-webkit-keyframes gradient {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
-@keyframes gradient {
-  0% {
-    background-position: 0% 50%; }
-  50% {
-    background-position: 100% 50%; }
-  100% {
-    background-position: 0% 50%; } }
-
 .container {
   max-width: 1320px;
   margin: 0 auto;
@@ -90,23 +74,26 @@ body {
       max-width: 372px; } }
 
 h1 {
-  margin: 0 auto;
   margin-top: 20px;
   margin-bottom: 20px;
   text-align: center;
   font-size: 48px;
-  width: 100%;
   font-family: "Raleway", sans-serif;
   color: white; }
 
-h3 {
-  font-family: "Permanent Marker", cursive;
+h2 {
+  margin-bottom: 20px;
   text-align: center;
   font-size: 24px;
-  -webkit-transform: rotate(-1deg);
-      -ms-transform: rotate(-1deg);
-          transform: rotate(-1deg);
-  opacity: 45; }
+  font-family: 'Noto Sans TC', sans-serif;
+  font-weight: 100;
+  color: white; }
+
+footer {
+  font-family: "Permanent Marker", cursive;
+  text-align: center;
+  font-size: 8px;
+  color: white; }
 
 .table {
   position: relative;
@@ -124,7 +111,8 @@ ul {
       -ms-flex-pack: justify;
           justify-content: space-between;
   -ms-flex-wrap: wrap;
-      flex-wrap: wrap; }
+      flex-wrap: wrap;
+  margin-bottom: 40px; }
 
 li.poloroid:nth-child(odd) {
   -webkit-transform: rotate(2deg);
@@ -132,9 +120,9 @@ li.poloroid:nth-child(odd) {
           transform: rotate(2deg); }
 
 li.poloroid:nth-child(even) {
-  -webkit-transform: rotate(-2deg);
-      -ms-transform: rotate(-2deg);
-          transform: rotate(-2deg); }
+  -webkit-transform: rotate(-1deg);
+      -ms-transform: rotate(-1deg);
+          transform: rotate(-1deg); }
 
 .poloroid {
   display: -webkit-box;
@@ -145,7 +133,7 @@ li.poloroid:nth-child(even) {
   -webkit-box-direction: normal;
       -ms-flex-direction: column;
           flex-direction: column;
-  padding: 25px 30px;
+  padding: 25px 30px 40px 30px;
   background: white;
   border-radius: 2%; }
   @media (max-width: 992px) {
@@ -174,6 +162,22 @@ li.poloroid:active > .photo img {
   background-size: cover;
   -webkit-animation: develop-picture 3s ease-in paused;
           animation: develop-picture 3s ease-in paused; }
+
+@-webkit-keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
+
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%; }
+  50% {
+    background-position: 100% 50%; }
+  100% {
+    background-position: 0% 50%; } }
 
 @-webkit-keyframes develop-picture {
   0% {
