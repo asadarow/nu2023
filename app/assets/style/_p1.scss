@@ -35,6 +35,10 @@ h1 {
   font-size: 48px;
   font-family: "Raleway", sans-serif;
   color: white;
+  @include MB {
+    margin-bottom: 16px;
+    font-size: 24px;
+  }
 }
 
 h2{
@@ -43,7 +47,10 @@ h2{
   font-size: 24px;
   font-family: 'Noto Sans TC', sans-serif;
   font-weight: 100;
-  color: white;  
+  color: white;
+  @include MB {
+    font-size: 16px;
+  }  
 }
 // h3 {
 //   font-family: "Permanent Marker", cursive;
@@ -58,7 +65,6 @@ footer{
   text-align: center;
   font-size: 8px;
   color: white;
-  
 }
 
 .table {
